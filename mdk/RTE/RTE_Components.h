@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'SPL_07_LCD' 
+ * Project: 'crd_code' 
  * Target:  'Target 1' 
  */
 
