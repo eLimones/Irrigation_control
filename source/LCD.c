@@ -13,6 +13,15 @@ void lcd_sendChar(char c){
 	}
 }
 
+void lcd_goto(char xpos,char ypos){
+	unsigned char ddram_adress;
+	ddram_adress=ypos?0x40:0x00;//sencond line starts at 0x40 
+	ddram_adress|=ddram_adress|(xpos&0xF);//only 0x0F diferent addres
+	ddram_adress|=(0x1<<7);
+	lcd_sendCommand(ddram_adress);
+	lcd_hw_delay_ms(1);//wait for lcd initialization
+}
+
 void lcd_init(void){
 	lcd_hw_init();
 	lcd_hw_outputCtrl(PIN_RW,RW_WRITE);

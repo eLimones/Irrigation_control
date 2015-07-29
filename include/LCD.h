@@ -15,6 +15,7 @@ extern "C" {
 	void lcd_init(void);
 	void lcd_sendCommand(unsigned char cmd);
 	void lcd_sendChar(char data);
+	void lcd_goto(char xpos,char ypos);
 	
 #ifdef	__cplusplus
 }

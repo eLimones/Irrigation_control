@@ -84,9 +84,12 @@ int main(void)
 	UART2_init(9600);
 	lcd_init();
 	serial_printf(UART2_serial,"\nSystem ready\n");
-	serial_printf(LCD_serial,"Hola mundo");
+	serial_printf(LCD_serial,"\fPOS %d",encoder_pos);
 	while(1){
-		if(encoder_hasChanged()) serial_printf(LCD_serial,"\fPOS %d",encoder_pos);
+		if(encoder_hasChanged()){
+			lcd_goto(4,0);
+			serial_printf(LCD_serial,"%d  ",encoder_pos);
+		}
 	}
 }
 
