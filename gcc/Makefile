@@ -1,10 +1,10 @@
-INCLUDE_DIRS:= device/include cmsis/include ../include ../STM32F0xx_StdPeriph_Driver/inc ../retarget/gcc/include
-SOURCE_DIRS:=  device/source ../source ../STM32F0xx_StdPeriph_Driver/src ../retarget/gcc/source
+INCLUDE_DIRS:= device/include cmsis/include ../include ../STM32F0xx_StdPeriph_Driver/inc ../retarget/include
+SOURCE_DIRS:=  device/source ../source ../STM32F0xx_StdPeriph_Driver/src ../retarget/source
 
 #All the dtandard peripherial library files
 SPL_FILES:= $(notdir $(wildcard ../STM32F0xx_StdPeriph_Driver/src/*.c ))
 #the C files to compile
-CFILES:= system_stm32f0xx.c $(SPL_FILES) main.c serial_stdio.c retarget_STM32F0.c
+CFILES:= system_stm32f0xx.c $(SPL_FILES) main.c serial_stdio.c retarget_STM32F0.c LCD.c  LCD_stm32f0.c
 #the assembly files assemble
 ASM_FILES:= startup_stm32f051.S
 #the target microcontroller
