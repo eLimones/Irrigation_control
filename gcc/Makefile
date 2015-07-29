@@ -63,3 +63,12 @@ debug: salida.elf
 	! echo "reset" | telnet localhost 4444 ;
 	sleep 1 ;
 	! echo "shutdown" | telnet localhost 4444 ;
+
+debugOpen: salida.elf
+	openocd -f board/st_nucleo_f0.cfg &
+	sleep 1 ;
+	! echo "reset halt" | telnet localhost 4444 ;
+debugClose: salida.elf
+	! echo "reset" | telnet localhost 4444 ;
+	sleep 1 ;
+	! echo "shutdown" | telnet localhost 4444 ;
